@@ -1,5 +1,7 @@
 package com.jasonwjones.griddly;
 
+import static org.junit.Assert.assertTrue;
+
 import org.junit.Before;
 import org.junit.Test;
 
@@ -23,6 +25,7 @@ public class GridTest {
 	public void testGridOfString() {
 		Grid<String> grid = new BasicGrid<String>(10, 10);
 		grid.setCellData(0, 0, "Mary");
+		assertTrue(true);
 //		
 //		System.out.println(grid);
 //		System.out.println(grid.toString(10));
