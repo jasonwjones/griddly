@@ -1,4 +1,4 @@
-package com.jasonwjones.griddly;
+package com.jasonwjones.griddly.action;
 
 /**
  * This interface must be supported in order to perform a Grid conversion from

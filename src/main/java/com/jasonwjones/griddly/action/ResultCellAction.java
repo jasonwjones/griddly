@@ -1,4 +1,4 @@
-package com.jasonwjones.griddly;
+package com.jasonwjones.griddly.action;
 
 public interface ResultCellAction<E> {
 

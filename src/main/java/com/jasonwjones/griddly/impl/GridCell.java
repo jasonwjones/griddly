@@ -1,8 +1,13 @@
-package com.jasonwjones.griddly;
+package com.jasonwjones.griddly.impl;
 
 /**
  * A GridCell is the lowest-granularity object in a Grid (other than the data
- * itself). It is a generic container.
+ * itself). It is a generic container. 
+ * 
+ * A GridCell is entirely allowed to contain nothing (null)!
+ * 
+ * Possible todo: inline with BasicGrid?
+ * 
  * @author jasonwjones
  *
  * @param <E>

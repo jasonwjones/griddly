@@ -1,9 +1,9 @@
-package com.saxifrages.stellaris.grids.base;
+package com.jasonwjones.griddly;
 
 import org.junit.Before;
 import org.junit.Test;
 
-import com.jasonwjones.griddly.Grid;
+import com.jasonwjones.griddly.impl.BasicGrid;
 
 public class GridTest {
 
@@ -21,7 +21,7 @@ public class GridTest {
 		
 	@Test
 	public void testGridOfString() {
-		Grid<String> grid = new Grid<String>(10, 10);
+		Grid<String> grid = new BasicGrid<String>(10, 10);
 		grid.setCellData(0, 0, "Mary");
 //		
 //		System.out.println(grid);

@@ -1,14 +1,21 @@
-package com.jasonwjones.griddly;
+package com.jasonwjones.griddly.impl;
 
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-public class GridRow<E> implements Iterable<GridCell<E>> {
+
+/**
+ * TODO: Inline this inside default grid?
+ * @author Jason W. Jones
+ *
+ * @param <E>
+ */
+public class BasicGridRow<E> implements Iterable<E>, GridRow<E> {
 
 	protected List<GridCell<E>> cells;
 	
-	public GridRow(int columns) {
+	public BasicGridRow(int columns) {
 		cells = new ArrayList<GridCell<E>>(columns);
 		for (int index = 0; index < columns; index++) {
 			GridCell<E> cell = new GridCell<E>();
@@ -16,9 +23,9 @@ public class GridRow<E> implements Iterable<GridCell<E>> {
 		}
 	}
 	
-	public GridRow(GridRow<E> gridRow) {
+	public BasicGridRow(GridRow<E> gridRow) {
 		cells = new ArrayList<GridCell<E>>();
-		for (GridCell<E> cell : gridRow) {
+		for (E cell : gridRow) {
 			cells.add(new GridCell<E>(cell));
 		}
 	}
@@ -39,8 +46,21 @@ public class GridRow<E> implements Iterable<GridCell<E>> {
 		return cells.size();
 	}
 
-	public Iterator<GridCell<E>> iterator() {
-		return cells.iterator();
+	public Iterator<E> iterator() {
+		return new Iterator<E>() {
+			private int index = 0;
+			public boolean hasNext() {
+				return index < cells.size();
+			}
+
+			public E next() {
+				return cells.get(index++).getData();
+			}
+
+			public void remove() {
+				throw new UnsupportedOperationException();
+			}
+		};
 	}
 
 }

@@ -6,14 +6,11 @@
 	<url>http://www.jasonwjones.com</url>
 	<description>Griddly is a simple and flexible generic Grid library for Java. It is a true Java generic class and can use any object as its base type. Originally part of Saxbi Server as the Stellaris Grids module, it has been spun off to a standalone library.</description>
 	<inceptionYear>December 1, 2011</inceptionYear>
-
 	<organization>
-		<name>Saxifrage Systems LLC</name>
-		<url>http://www.saxifrages.com</url>
+		<name>Jason Jones</name>
+		<url>http://www.jasonwjones.com</url>
 	</organization>
-
-
-	<version>1.0.0</version>
+	<version>1.0.1-SNAPSHOT</version>
 	<groupId>com.jasonwjones.griddly</groupId>
 	<dependencies>
 		<dependency>
@@ -23,4 +20,18 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.6</source>
+					<target>1.6</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
 </project>

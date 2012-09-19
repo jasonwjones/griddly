@@ -1,8 +1,7 @@
-package com.jasonwjones.griddly.cellaction;
+package com.jasonwjones.griddly.action;
 
 import java.util.Map;
 
-import com.jasonwjones.griddly.ResultCellAction;
 
 public class Replacer<E> implements ResultCellAction<E> {
 
