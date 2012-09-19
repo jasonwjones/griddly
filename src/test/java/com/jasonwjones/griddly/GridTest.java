@@ -3,6 +3,7 @@ package com.jasonwjones.griddly;
 import static org.junit.Assert.assertTrue;
 
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import com.jasonwjones.griddly.impl.BasicGrid;
@@ -22,6 +23,7 @@ public class GridTest {
 //	}
 		
 	@Test
+	@Ignore
 	public void testGridOfString() {
 		Grid<String> grid = new BasicGrid<String>(10, 10);
 		grid.setCellData(0, 0, "Mary");
