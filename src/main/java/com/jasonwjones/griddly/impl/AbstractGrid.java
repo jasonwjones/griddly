@@ -36,7 +36,7 @@ public abstract class AbstractGrid<E> implements Iterable<E>, Grid<E> {
 	 */
 	public AbstractGrid(int rows, int cols) {
 		if (rows < 1 || cols < 1) {
-			throw new IllegalArgumentException("A grid may not have a dimension of size 0 or less.");
+			//throw new IllegalArgumentException("A grid may not have a dimension of size 0 or less.");
 		}
 	}
 
