@@ -21,11 +21,11 @@ public class SimpleGridPrinter implements GridPrinter {
 		for (int row = 0; row < grid.getRows(); row++) {
 			for (int col = 0; col < grid.getColumns(); col++) {
 				Object data = grid.getCellData(row, col);
-				// TOOD: use native format method
-				writer.print(String.format(template, data != null ? data.toString() : ""));
+				writer.printf(template, data != null ? data.toString() : "");
 			}
 			writer.println();
 		}
+		writer.flush();
 	}
 
 }
