@@ -10,7 +10,7 @@ import com.jasonwjones.griddly.impl.AbstractGrid;
  * 
  * @author Jason W. Jones
  * 
- * @param <E>
+ * @param <E> the type of this grid
  */
 public abstract class StackedGrid<E> extends AbstractGrid<E> implements Grid<E> {
 
@@ -18,9 +18,10 @@ public abstract class StackedGrid<E> extends AbstractGrid<E> implements Grid<E> 
 	 * Attempt to automatically determine way to stitch grids based on a size
 	 * that matches up.
 	 * 
-	 * @param firstGrid
-	 * @param secondGrid
-	 * @return
+	 * @param firstGrid the first grid
+	 * @param secondGrid the second grid
+	 * @param <E> the type
+	 * @return the new grid 
 	 */
 	public static <E> StackedGrid<E> stitch(Grid<E> firstGrid, Grid<E> secondGrid) {
 		return null;

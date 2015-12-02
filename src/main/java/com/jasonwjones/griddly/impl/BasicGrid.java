@@ -15,7 +15,7 @@ import com.jasonwjones.griddly.action.CellWalker;
  * 
  * @author Jason W. Jones
  * 
- * @param <E>
+ * @param <E> the type for the BasicGrid
  */
 public class BasicGrid<E> extends AbstractGrid<E> implements Grid<E> {
 
@@ -60,9 +60,9 @@ public class BasicGrid<E> extends AbstractGrid<E> implements Grid<E> {
 	 * Somewhat of a vestigial structure. Keeping around for now in case it
 	 * becomes useful/necessary to get at the wrapper.
 	 * 
-	 * @param row
-	 * @param column
-	 * @return
+	 * @param row the row index of the cell to get
+	 * @param column the column index of the cell to get
+	 * @return the GridCell object for the given row/column
 	 */
 	protected GridCell<E> getCell(int row, int column) {
 		if (row < this.getRows() && column < this.getColumns()) {

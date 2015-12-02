@@ -7,7 +7,7 @@ import com.jasonwjones.griddly.action.CellWalker;
 import com.jasonwjones.griddly.impl.AbstractGrid;
 
 /**
- * A Grid<E> implementing class which, given another grid and a 'frame' will act
+ * A Grid implementing class which, given another grid and a 'frame' will act
  * as a window into that grid without actually copying the original grid.
  * 
  * Original Grid:
@@ -40,7 +40,7 @@ public class GridWindow<E> extends AbstractGrid<E> implements Grid<E> {
 
 	/** 
 	 * Just creates a GridWindow with the same dimensions as the source grid
-	 * @param grid
+	 * @param grid the grid to window
 	 */
 	public GridWindow(Grid<E> grid) {
 		this(grid, 0, 0, grid.getRows(), grid.getColumns());
@@ -50,14 +50,6 @@ public class GridWindow<E> extends AbstractGrid<E> implements Grid<E> {
 		
 	}
 	
-	/**
-	 * TODO: Auto flip coords?
-	 * @param grid
-	 * @param rowStart
-	 * @param colStart
-	 * @param rowEnd
-	 * @param colEnd
-	 */
 	public GridWindow(Grid<E> grid, int rowStart, int colStart, int rowEnd, int colEnd) {
 		if (rowEnd <= rowStart || colEnd <= colStart) {
 			throw new IllegalArgumentException("Row/col ends must be greater than start.");

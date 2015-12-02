@@ -15,7 +15,7 @@ import com.jasonwjones.griddly.viewers.GridWindow;
  * 
  * @author Jason W. Jones
  * 
- * @param <E>
+ * @param <E> the type of the Grid
  */
 public class AutoSizingTreeGrid<E> extends AbstractGrid<E> implements Grid<E> {
 

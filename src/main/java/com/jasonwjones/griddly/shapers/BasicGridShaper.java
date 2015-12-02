@@ -13,9 +13,9 @@ public class BasicGridShaper<E> extends AbstractGridShaper<E> implements GridSha
 	/**
 	 * Given two grids of equal width, creates a new grid of both
 	 * 
-	 * @param topGrid
-	 * @param bottomGrid
-	 * @return
+	 * @param topGrid the top grid
+	 * @param bottomGrid the bottom grid
+	 * @return the new grid object
 	 */
 	public Grid<E> stackGrids(Grid<E> topGrid, Grid<E> bottomGrid) {
 		return new TopBottomStackedGrid<E>(topGrid, bottomGrid);

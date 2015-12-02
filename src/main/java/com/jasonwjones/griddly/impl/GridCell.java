@@ -10,7 +10,7 @@ package com.jasonwjones.griddly.impl;
  * 
  * @author jasonwjones
  *
- * @param <E>
+ * @param <E> the type for this grid cell
  */
 public class GridCell<E> {
 	
@@ -25,7 +25,7 @@ public class GridCell<E> {
 	/**
 	 * This is not a copy of the data! This new GridCell will just have a 
 	 * reference to the same piece of data!
-	 * @param gridCell
+	 * @param gridCell the grid cell to copy
 	 */
 	public GridCell(GridCell<E> gridCell) {
 		cellData = gridCell.cellData;

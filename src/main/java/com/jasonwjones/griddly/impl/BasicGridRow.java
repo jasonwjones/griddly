@@ -9,7 +9,7 @@ import java.util.List;
  * TODO: Inline this inside default grid?
  * @author Jason W. Jones
  *
- * @param <E>
+ * @param <E> the type for the row
  */
 public class BasicGridRow<E> implements Iterable<E>, GridRow<E> {
 

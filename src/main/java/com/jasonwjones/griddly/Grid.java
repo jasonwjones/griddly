@@ -13,7 +13,7 @@ import com.jasonwjones.griddly.action.ResultCellAction;
  * 
  * @author Jason W. Jones
  * 
- * @param <E>
+ * @param <E> the generic type for the grid
  */
 public interface Grid<E> extends Iterable<E> {
 
@@ -60,7 +60,7 @@ public interface Grid<E> extends Iterable<E> {
 	/**
 	 * Check if this Grid has the same size (rows/columns as given grid)
 	 * 
-	 * @param grid
+	 * @param grid a grid to check if it's the same size as this grid
 	 * @return true if the grids have the same dimensions, false otherwise
 	 */
 	public boolean isSameSizeAs(Grid<E> grid);
@@ -79,9 +79,10 @@ public interface Grid<E> extends Iterable<E> {
 	 * Converts the grid from one type to another be using the provided
 	 * converter interface.
 	 * 
-	 * @param converter
+	 * @param converter the object that will convert frmo one type to another
+	 * @param <S> the destination type of the new grid
 	 * @return the converted grid
-	 */
+	 */	
 	public <S> Grid<S> convert(ConverterCellAction<E, S> converter);
 
 	/**

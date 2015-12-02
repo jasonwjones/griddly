@@ -14,7 +14,7 @@ import com.jasonwjones.griddly.shapers.DefaultGridShaper;
 
 /**
  * Generic grid class allows for creating and managing a Grid that can hold any
- * object. Subclasses should implement Grid<E> in their interface as well as
+ * object. Subclasses should implement Grid in their interface as well as
  * here. It is provided here in order to use itself as an argument to
  * DefaultGridShaper among other things.
  * 
@@ -51,7 +51,7 @@ public abstract class AbstractGrid<E> implements Iterable<E>, Grid<E> {
 	/**
 	 * Copy constructor
 	 * 
-	 * @param grid
+	 * @param grid grid to make a copy of
 	 */
 	public AbstractGrid(Grid<E> grid) {
 	}
@@ -62,11 +62,6 @@ public abstract class AbstractGrid<E> implements Iterable<E>, Grid<E> {
 
 	public abstract E getCellData(int row, int col);
 
-	/**
-	 * Delete a row from the grid
-	 * 
-	 * @param rowIndex the index of the row to delete
-	 */
 	// public void deleteRow(int rowIndex) {
 	// gridRows.remove(rowIndex);
 	// rows--;
@@ -79,7 +74,7 @@ public abstract class AbstractGrid<E> implements Iterable<E>, Grid<E> {
 	/**
 	 * Remove a column from the Grid
 	 * 
-	 * @param colIndex
+	 * @param colIndex the index of the column to remove
 	 */
 	// public void deleteColumn(int colIndex) {
 	// for (GridRow<E> currentRow : gridRows) {
@@ -111,7 +106,7 @@ public abstract class AbstractGrid<E> implements Iterable<E>, Grid<E> {
 	 * Update the data in all cells that contain data by calling the provided
 	 * CellAction object with the data
 	 * 
-	 * @param delegate
+	 * @param delegate the delegate to use to change cell values
 	 */
 	public void updateCells(CellAction<E> delegate) {
 		for (E gridCell : this) {
@@ -126,7 +121,7 @@ public abstract class AbstractGrid<E> implements Iterable<E>, Grid<E> {
 	 * ResultCellAction delegate. ResultCellAction must return the original
 	 * object if it doesn't want to make any changes.
 	 * 
-	 * @param delegate
+	 * @param delegate the delegate to use to replace a cell
 	 */
 	public void replaceCells(ResultCellAction<E> delegate) {
 		for (E gridCell : this) {
@@ -219,7 +214,7 @@ public abstract class AbstractGrid<E> implements Iterable<E>, Grid<E> {
 	 * Walks the grid and calls the delegate with every single cell data. Cells
 	 * may be empty (null).
 	 * 
-	 * @param walker
+	 * @param walker the object to use to iterate over the grid
 	 */
 	public void walk(CellWalker<E> walker) {
 		for (int row = 0; row < getRows(); row++) {
