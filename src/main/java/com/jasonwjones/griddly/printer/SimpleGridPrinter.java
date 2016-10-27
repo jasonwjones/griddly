@@ -9,6 +9,8 @@ public class SimpleGridPrinter extends AbstractGridPrinter implements GridPrinte
 
 	private String template;
 
+	private String nullText = " ";
+	
 	public interface ValueConverter {
 
 		public String convert(Object value);
@@ -30,7 +32,7 @@ public class SimpleGridPrinter extends AbstractGridPrinter implements GridPrinte
 		for (int row = 0; row < grid.getRows(); row++) {
 			for (int col = 0; col < grid.getColumns(); col++) {
 				Object data = grid.getCellData(row, col);
-				printWriter.format(template, data != null ? data.toString() : "#null");
+				printWriter.format(template, data != null ? data.toString() : nullText);
 			}
 			printWriter.println();
 		}

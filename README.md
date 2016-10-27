@@ -10,6 +10,9 @@ Need to specify JAVA_HOME build. Easiest way to get this variable is with `/usr/
 Also need `gpg` installed on command line... run brew install gpg
 Then generated a signature
 
+Commit local changes to Git repository
+
+Do this all on the command line
 
 	mvn release:clean
 	mvn release:prepare

@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.jasonwjones.griddly</groupId>
 	<artifactId>griddly</artifactId>
-	<version>1.0.6-SNAPSHOT</version>
+	<version>1.0.7</version>
 	<packaging>jar</packaging>
 
 	<name>Griddly</name>
@@ -48,6 +48,7 @@
 	</dependencies>
 
 	<distributionManagement>
+		<!-- 
 		<snapshotRepository>
 			<id>ossrh</id>
 			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
@@ -56,22 +57,37 @@
 			<id>ossrh</id>
 			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
 		</repository>
+		-->
+		<snapshotRepository>
+			<id>applied-olap-snapshots</id>
+			<url>http://192.168.1.251:8081/nexus/content/repositories/snapshots</url>
+		</snapshotRepository>
+		<repository>
+			<id>applied-olap-releases</id>
+			<url>http://192.168.1.251:8081/nexus/content/repositories/releases</url>
+		</repository>
 	</distributionManagement>
 
 	<build>
 		<plugins>
+			<!-- 
 			<plugin>
 				<groupId>org.sonatype.plugins</groupId>
 				<artifactId>nexus-staging-maven-plugin</artifactId>
-				<version>1.6.3</version>
+				<version>1.6.7</version>
 				<extensions>true</extensions>
 				<configuration>
+					TODO change back to oss to make work with Central 
 					<serverId>ossrh</serverId>
 					<nexusUrl>https://oss.sonatype.org/</nexusUrl>
+					
+					<serverId>applied-olap-releases</serverId>
+					<nexusUrl>http://192.168.1.251:8081/nexus</nexusUrl>
+					
 					<autoReleaseAfterClose>true</autoReleaseAfterClose>
 				</configuration>
 			</plugin>
-
+			-->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-source-plugin</artifactId>
@@ -120,7 +136,6 @@
 					<encoding>UTF-8</encoding>
 				</configuration>
 			</plugin>
-
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-gpg-plugin</artifactId>
@@ -135,7 +150,6 @@
 					</execution>
 				</executions>
 			</plugin>
-
 		</plugins>
 
 		<pluginManagement>
@@ -164,8 +178,6 @@
 						</lifecycleMappingMetadata>
 					</configuration>
 				</plugin>
-
-
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-release-plugin</artifactId>
@@ -173,7 +185,5 @@
 				</plugin>
 			</plugins>
 		</pluginManagement>
-
 	</build>
-
 </project>
